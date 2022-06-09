@@ -1,0 +1,65 @@
+//POKEMON MOVES EFFECT KEY:
+
+0: No status
+1: Poisoned
+2: Paralyzed
+3: Burned
+4: Sleep
+5: Freeze
+6: Confused
+7: Badly poisoned
+8: Flinch
+9: Safeguarded
+10: Protected
+11: Reflect
+12: Light Screen
+13: Lose item
+14: Priority +1
+15: Priority +2
+16: Lower user def
+17: Lower user sp. def
+18: Lower user def and sp. def
+19: Lower user def by two stages
+20: Lower user sp. def by two stages
+21: Lower user atk
+22: Lower user sp. atk
+23: Lower user atk by two stages
+24: Lower user sp. atk by two stages
+25: Lower user spd.
+26: Lower user spd. harshly
+26: Deals recoil = 1/4 damage dealt
+27: Deals recoil = 1/3 damage dealt
+28: Deals recoil = 1/2 damage dealt
+29: Raises user def
+30: Raises user sp. def
+31: Raises user def and sp. def
+32: Raises user def by two stages
+33: Raises user sp. def by two stages
+34: Raises user atk
+35: Raises user atk by two stages
+36: Raises user sp. atk
+37: Raises user sp. atk by two stages
+38: Raises user spd
+39: Raises user spd by two stages
+40: Heals = 1/2 damage done
+
+//POKEMON TYPE KEY
+
+0: Normal
+1: Fighting
+2: Grass
+3: Water
+4: Fire
+5: Electric
+6: Ice
+7: Bug
+8: Flying
+9: Rock
+10: Ground
+11: Poison
+12: Psychic
+13: Ghost
+14: Dark
+15: Steel
+16: Dragon
+17: Fairy
