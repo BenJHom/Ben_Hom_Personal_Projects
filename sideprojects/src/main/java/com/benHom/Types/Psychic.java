@@ -6,9 +6,9 @@ import java.util.List;
 public class Psychic implements Type{
 
     private String name = "Psychic";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Psychic(){
         setWeakness();
@@ -17,14 +17,14 @@ public class Psychic implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Bug());
-        weakness.add(new Ghost());
-        weakness.add(new Dark());
+        weakness.add("Bug");
+        weakness.add("Ghost");
+        weakness.add("Dark");
     }
 
     private void setResistance(){
-        resistance.add(new Psychic());
-        resistance.add(new Fighting());
+        resistance.add("Psychic");
+        resistance.add("Fighting");
     }
 
     private void setImmunity(){
@@ -34,17 +34,17 @@ public class Psychic implements Type{
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
     @Override
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
     @Override
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

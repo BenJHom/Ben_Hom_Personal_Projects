@@ -6,9 +6,9 @@ import java.util.List;
 public class Steel implements Type{
 
     private String name = "Steel";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Steel(){
         setWeakness();
@@ -17,43 +17,43 @@ public class Steel implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Fire());
-        weakness.add(new Fighting());
-        weakness.add(new Ground());
+        weakness.add("Fire");
+        weakness.add("Fighting");
+        weakness.add("Ground");
     }
 
     private void setResistance(){
-        resistance.add(new Normal());
-        resistance.add(new Rock());
-        resistance.add(new Grass());
-        resistance.add(new Ice());
-        resistance.add(new Flying());
-        resistance.add(new Bug());
-        resistance.add(new Psychic());
-        resistance.add(new Dragon());
-        resistance.add(new Steel());
-        resistance.add(new Fairy());
+        resistance.add("Normal");
+        resistance.add("Rock");
+        resistance.add("Grass");
+        resistance.add("Ice");
+        resistance.add("Flying");
+        resistance.add("Bug");
+        resistance.add("Psychic");
+        resistance.add("Dragon");
+        resistance.add("Steel");
+        resistance.add("Fairy");
     }
 
     private void setImmunity(){
-        immunity.add(new Poison());
+        immunity.add("Poison");
     }
 
     public String getName(){
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
     @Override
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
     @Override
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

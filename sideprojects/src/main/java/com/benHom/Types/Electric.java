@@ -6,9 +6,9 @@ import java.util.List;
 public class Electric implements Type{
 
     private String name = "Electric";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Electric(){
         setWeakness();
@@ -17,12 +17,12 @@ public class Electric implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Ground());
+        weakness.add("Ground");
     }
 
     private void setResistance(){
-        resistance.add(new Electric());
-        resistance.add(new Flying());
+        resistance.add("Electric");
+        resistance.add("Flying");
     }
 
     private void setImmunity(){
@@ -32,17 +32,17 @@ public class Electric implements Type{
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
     @Override
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
     @Override
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

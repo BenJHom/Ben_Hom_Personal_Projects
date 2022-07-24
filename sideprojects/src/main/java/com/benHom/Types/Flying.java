@@ -6,9 +6,9 @@ import java.util.List;
 public class Flying implements Type{
 
     private String name = "Flying";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Flying(){
         setWeakness();
@@ -17,36 +17,36 @@ public class Flying implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Electric());
-        weakness.add(new Ice());
-        weakness.add(new Rock());
+        weakness.add("Electric");
+        weakness.add("Ice");
+        weakness.add("Rock");
     }
 
     private void setResistance(){
-        resistance.add(new Grass());
-        resistance.add(new Bug());
-        resistance.add(new Fighting());
+        resistance.add("Grass");
+        resistance.add("Bug");
+        resistance.add("Fighting");
     }
 
     private void setImmunity(){
-        immunity.add(new Ground());
+        immunity.add("Ground");
     }
 
     public String getName(){
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
     @Override
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
     @Override
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

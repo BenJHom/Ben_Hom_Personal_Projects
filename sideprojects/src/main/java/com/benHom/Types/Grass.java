@@ -6,9 +6,9 @@ import java.util.List;
 public class Grass implements Type{
 
     private String name = "Grass";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Grass(){
         setWeakness();
@@ -17,18 +17,18 @@ public class Grass implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Fire());
-        weakness.add(new Flying());
-        weakness.add(new Bug());
-        weakness.add(new Poison());
-        weakness.add(new Ice());
+        weakness.add("Fire");
+        weakness.add("Flying");
+        weakness.add("Bug");
+        weakness.add("Poison");
+        weakness.add("Ice");
     }
 
     private void setResistance(){
-        resistance.add(new Grass());
-        resistance.add(new Ground());
-        resistance.add(new Water());
-        resistance.add(new Electric());
+        resistance.add("Grass");
+        resistance.add("Ground");
+        resistance.add("Water");
+        resistance.add("Electric");
     }
 
     private void setImmunity(){
@@ -38,17 +38,17 @@ public class Grass implements Type{
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
     @Override
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
     @Override
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

@@ -1,17 +1,15 @@
-package com.benHom.Pokemon;
+package com.benHom.Redundancy;
 
 import com.benHom.Battle;
 import com.benHom.Moves.*;
+import com.benHom.Pokemon.Pokemon;
 import com.benHom.Types.Fighting;
 import com.benHom.Types.None;
-import com.benHom.Types.Type;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class Machamp extends Pokemon{
+public class Machamp extends Pokemon {
 
     private final String name = "Machamp";
     private final Type typeOne = new Fighting();

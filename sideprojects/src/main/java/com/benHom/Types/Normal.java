@@ -6,9 +6,9 @@ import java.util.List;
 public class Normal implements Type{
 
     private String name = "Normal";
-    private List<Type> weakness = new ArrayList<>();
-    private List<Type> resistance = new ArrayList<>();
-    private List<Type> immunity = new ArrayList<>();
+    private List<String> weakness = new ArrayList<>();
+    private List<String> resistance = new ArrayList<>();
+    private List<String> immunity = new ArrayList<>();
 
     public Normal(){
         setWeakness();
@@ -17,29 +17,29 @@ public class Normal implements Type{
     }
 
     private void setWeakness(){
-        weakness.add(new Fighting());
+        weakness.add("Fighting");
     }
 
     private void setResistance(){
     }
 
     private void setImmunity(){
-        immunity.add(new Ghost());
+        immunity.add("Ghost");
     }
 
     public String getName(){
         return name;
     }
 
-    public List<Type> getWeakness(){
+    public List<String> getWeakness(){
         return weakness;
     }
 
-    public List<Type> getResistance() {
+    public List<String> getResistance() {
         return resistance;
     }
 
-    public List<Type> getImmunity() {
+    public List<String> getImmunity() {
         return immunity;
     }
 }

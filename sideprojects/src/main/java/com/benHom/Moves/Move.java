@@ -2,7 +2,7 @@ package com.benHom.Moves;
 
 import com.benHom.Types.Type;
 
-public abstract class Move {
+public class Move {
 
     private String name;
     private Type type;
@@ -10,15 +10,18 @@ public abstract class Move {
     private int accuracy;
     private int effectKey;
     private int effectChance;
-    private boolean isSpecial;
+    private boolean isPhysical;
+    private boolean isStatus;
 
-    public Move(String name, Type type, int power, int accuracy, int effectKey, int effectChance, boolean isSpecial){
+    public Move(String name, Type type, int power, int accuracy, int effectKey, int effectChance, boolean isPhysical, boolean isStatus){
         this.name = name;
         this.type = type;
         this.power = power;
         this.accuracy = accuracy;
         this.effectKey = effectKey;
-        this.isSpecial = isSpecial;
+        this.effectChance = effectChance;
+        this.isPhysical = isPhysical;
+        this.isStatus = isStatus;
     }
 
     //GETTERS FOR DISPLAY
@@ -47,7 +50,9 @@ public abstract class Move {
         return effectChance;
     }
 
-    public boolean isSpecial() {
-        return isSpecial;
+    public boolean isPhysical() {
+        return isPhysical;
     }
+
+    public boolean isStatus() { return isStatus;}
 }

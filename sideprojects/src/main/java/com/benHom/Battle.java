@@ -1,6 +1,8 @@
 package com.benHom;
 
+import com.benHom.Moves.Move;
 import com.benHom.Pokemon.Pokemon;
+import com.benHom.Types.Type;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +18,9 @@ public class Battle {
     private Trainer trainerOne;
     private Trainer trainerTwo;
     private List<Pokemon> availablePokemon = new ArrayList<>();
+    private List<Move> availableMoves = new ArrayList<>();
+    private List<Type> availableTypes = new ArrayList<>();
+    private CombatChecker combatChecker;
 
     //Needed to set up properly
     private final Scanner keyboard = new Scanner(System.in);
@@ -32,8 +37,8 @@ public class Battle {
         setTrainer(playerTwoTurn);
     }
 
-    public void addAvailablePokemon(Pokemon created) {
-        availablePokemon.add(created);
+    public void addAvailablePokemon(List<Pokemon> availablePokemon) {
+        this.availablePokemon = availablePokemon;
     }
 
 //**********************************************************************************
@@ -90,22 +95,24 @@ public class Battle {
             System.out.print(trainerOne.getName() + "'s Pokemon: ");
             for (int i = 0 ; i<trainerOne.getPokemon().length ; i++) {
                 if (trainerOne.getPokemon()[i]!=null) {
-                    System.out.println(trainerOne.getPokemon()[i].getName() + " | ");
+                    System.out.print(trainerOne.getPokemon()[i].getName() + " | ");
                 } else {
                     break;
                 }
             }
         }
+        System.out.println();
         if(trainerTwoRoundsOfSelection>0) {
             System.out.print(trainerTwo.getName() + "'s Pokemon: ");
             for (int i = 0 ; i<trainerTwo.getPokemon().length ; i++) {
                 if (trainerTwo.getPokemon()[i]!=null) {
-                    System.out.println(trainerTwo.getPokemon()[i].getName() + " | ");
+                    System.out.print(trainerTwo.getPokemon()[i].getName() + " | ");
                 } else {
                     break;
                 }
             }
         }
+        System.out.println();
 
         //Enters draft cycle
         if (!trainerOneHasAllPokemon || !trainerTwoHasAllPokemon) {
@@ -138,17 +145,17 @@ public class Battle {
         System.out.println();
         System.out.println();
         Pokemon inCycle = availablePokemon.get(index);
-        System.out.println(inCycle.getName());
+        System.out.println(inCycle.getName() + " : " + inCycle.getTypesString());
         System.out.println("--------------------");
         System.out.println(inCycle.getShortDescription());
         System.out.println();
-        System.out.println("Moves: ");
+        System.out.print("Moves: ");
         for (int i = 0; i < inCycle.getMoves().size(); i++) {
             System.out.print(inCycle.getMoves().get(i).getName() + " | ");
         }
         System.out.println();
         System.out.println();
-        System.out.println("Stats:");
+        System.out.print("Stats | ");
         for (int i = 0; i < statsKey.length; i++) {
             System.out.print(statsKey[i] + inCycle.getStats()[i] + " | ");
         }
@@ -198,10 +205,48 @@ public class Battle {
 
 
     public void enterBattlePhase(){
-        System.out.println("Now entering battle phase");
+        System.out.println("************************* \nNow entering battle phase \n *************************");
+        trainerOne.setActivePokemon(trainerOne.getPokemon()[0]);
+        trainerTwo.setActivePokemon(trainerTwo.getPokemon()[0]);
+        switchIn(true, true);
+        turnPhase();
+    }
+
+    private void switchIn(boolean trainerOneSwitch, boolean trainerTwoSwitch) {
+        if (trainerOneSwitch) {
+            System.out.println(trainerOne.getName() + ": Go, " + trainerOne.getActivePokemon().getName() + "\n" + trainerOne.getActivePokemon().getName() + ": " + trainerOne.getActivePokemon().getSound());
+        }
+        if (trainerTwoSwitch) {
+            System.out.println(trainerTwo.getName() + ": Go, " + trainerTwo.getActivePokemon().getName() + "\n" + trainerTwo.getActivePokemon().getName() + ": " + trainerTwo.getActivePokemon().getSound());
+        }
     }
 
     //UI and move choice
+    private void turnPhase(){
+        String attackOrSwitch;
+        System.out.println("-------------------------------------");
+        System.out.println(playerTwoTurn?trainerTwo:trainerOne.getName()+"'s turn");
+        System.out.print("       1) Attack        |        2) Switch \n>>> ");
+        do{
+            attackOrSwitch = keyboard.nextLine();
+            if (!attackOrSwitch.equals("1") && !attackOrSwitch.equals("2")){
+                System.out.println("Invalid");
+            }
+        } while (!attackOrSwitch.equals("1") && !attackOrSwitch.equals("2"));
+
+        if (attackOrSwitch.equals("1")){
+            attackMenu();
+        } else {
+            //switchMenu();
+        }
+    }
+
+    private void attackMenu(){
+        for (int i = 0; i<trainerOne.getActivePokemon().getMoves().size(); i++){
+            System.out.println(i + ") " + trainerOne.getActivePokemon().getMoves().get(i));
+        }
+    }
+
 
     //Establish if pokemon can move based on status
 
