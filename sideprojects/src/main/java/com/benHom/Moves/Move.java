@@ -5,7 +5,7 @@ import com.benHom.Types.Type;
 public class Move {
 
     private String name;
-    private Type type;
+    private int type;
     private int power;
     private int accuracy;
     private int effectKey;
@@ -13,15 +13,8 @@ public class Move {
     private boolean isPhysical;
     private boolean isStatus;
 
-    public Move(String name, Type type, int power, int accuracy, int effectKey, int effectChance, boolean isPhysical, boolean isStatus){
-        this.name = name;
-        this.type = type;
-        this.power = power;
-        this.accuracy = accuracy;
-        this.effectKey = effectKey;
-        this.effectChance = effectChance;
-        this.isPhysical = isPhysical;
-        this.isStatus = isStatus;
+    public Move(){
+
     }
 
     //GETTERS FOR DISPLAY
@@ -30,7 +23,7 @@ public class Move {
     }
 
     //GETTERS FOR BATTLE
-    public Type getType() {
+    public int getType() {
         return type;
     }
 
@@ -55,4 +48,36 @@ public class Move {
     }
 
     public boolean isStatus() { return isStatus;}
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public void setAccuracy(int accuracy) {
+        this.accuracy = accuracy;
+    }
+
+    public void setEffectKey(int effectKey) {
+        this.effectKey = effectKey;
+    }
+
+    public void setEffectChance(int effectChance) {
+        this.effectChance = effectChance;
+    }
+
+    public void setPhysical(boolean physical) {
+        isPhysical = physical;
+    }
+
+    public void setStatus(boolean status) {
+        isStatus = status;
+    }
 }

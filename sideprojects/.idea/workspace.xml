@@ -30,10 +30,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../capstones/java-blue-capstone-module-2-team-1/tenmo-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\workspace\Ben_Hom_Personal_Projects\sideprojects\src\main\resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="PokemonApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
